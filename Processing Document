@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef vector<int> vi;
+typedef vector<long long> vl;
+typedef vector<double> vdb;
+#define ftb(i,a,b) for(ll i=a,_b=b;i<=_b;i++)
+#define ft(i,a,b) for(ll i=a,_b=b;i<_b;i++)
+#define fgb(i,a,b) for(ll i=a,_b=b;i>=_b;i--)
+#define fg(i,a,b) for(ll i=a,_b=b;i>_b;i--)
+int main(){
+    string a;
+    int k=1;
+    while(cin>>a){
+        for(int i=0;i<a.size();i++){
+            a[i]=tolower(a[i]);
+        }
+        if(k){
+            a[0]=toupper(a[0]);
+            k=0;
+        }
+        int leng=a.size();
+        if(a[leng-1]=='.'||a[leng-1]=='?'||a[leng-1]=='!'){
+            a=a.substr(0,leng-1);
+            k=1;
+            cout<<a<<endl;
+        } else cout<<a<<" ";
+    }
+}
