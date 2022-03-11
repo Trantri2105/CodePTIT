@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef vector<int> vi;
+typedef vector<long long> vl;
+typedef vector<double> vdb;
+#define ftb(i,a,b) for(int i=a,_b=b;i<=_b;i++)
+#define ft(i,a,b) for(int i=a,_b=b;i<_b;i++)
+#define fgb(i,a,b) for(int i=a,_b=b;i>=_b;i--)
+#define fg(i,a,b) for(int i=a,_b=b;i>_b;i--)
+void solve(){
+    ll n , k;
+    cin >> n >> k;
+    ll ans = 0 ;
+    ll MOD = 1e9 + 7;
+    ll p = 1;
+    for(ll i = 0 ; i < 32 ; i ++){
+        if(k & (1 << i)){
+            ans = (ans + p) % MOD; 
+        }
+        p = p * n;
+        p = p % MOD;
+        ans = ans % MOD;
+    }
+    cout << ans % MOD  << endl;
+    return;
+}
+  
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int test;
+    cin >> test;
+    while(test --){
+        solve();
+    }
+    return 0;
+}
